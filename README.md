@@ -1,2 +1,2 @@
-# blog_api
-blogger api challenge - creating CRUD api for blogging platform
+# Blog API
+Blogger api challenge - Creating CRUD api for blogging platform
