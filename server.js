@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const serverShut = require('http-shutdown')
 
 const jsonParser = bodyParser.json();
 const app = express();
@@ -30,16 +31,20 @@ function runServer() {
 }
 
 function closeServer() {
-  return new Promise((resolve, reject) => {
+  //return new Promise((resolve, reject) => {
     console.log('Closing server');
-    server.close(err => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve();
-    });
-  });
+     server.close()//err => {
+    //   if (err) {
+    //      reject(err);
+    //      console.log(err)
+    //      return;
+    //    }
+       console.log('resolved')
+    //   // return;
+    //   done();
+    // });
+   
+  //});
 }
 
 // if server.js is called directly (aka, with `node server.js`), this block
