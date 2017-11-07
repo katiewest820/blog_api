@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: qpsiWSZ5p1eRKu1pr5gYKReqIOIT2d0X8SjdC+ko57g+LJeTzjdXF2cy0fxyRKCsbPkNUDQX8+LuzT+1D7zszzP6i0wvfCDw/YcXfOcDO4kdbVMqzsRVPEjrsLkKX+xpapCGK6WlZAWoW5JUs/F0wfNCrW9su/WB3+z2423hYRFXgPGBm7Cei1/BsEkktyMuLgqPyn85dBV6riYfaLdw6lKmLnP2007SKekVl00/0xIKM9VroPSNg/UULaIODwRDE1jtMyiaOnl/9hdTXfmeRl2cMzxOTpeQu37y7yiDsdWZciaG0+4zXhO0d19tMmtcuLjDsGSKl5I6/XotYGmJYDZL/fp0Iq41sY12J+Abxlcz9kd9b6E/dfeEsT1w/vo591ypTy76MKQoTbyI8K0H1Uipg5LEoEdnW7Vj05NVRyvO9J5jGvJyrJDpczybc+Od+rv8H7+EAk6OWf9KkfFoVGBITUczBFKtWxXy/Tq98tnrYRaAI3K2aBw3xB6RyVDqBQtnz6oT4uV7bn8bgFpmheXFQoYyh6ZVrVtSn/HetzuUG/GXZpQVZ3VKgeBGHhvEUFVvSavPQ5o++XZ+0zqC6l5yGqVGqHVOGPEhs4DJc/LoWcApmob2kpXQWoXfYLzMSoLKPOwTmKJc+Pdx4LsvvIYPuRcft4GkACgSoenZl/w=
+  app: tranquil-gorge-24580
+  on:
+    repo: katiewest820/blog_api
