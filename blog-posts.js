@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const placeModel = require('./testmodel');
+//const placeModel = require('./testmodel');
 
 const jsonParser = bodyParser.json();
 const app = express();
 
 const {BlogPosts} = require('./models');
+
+BlogPosts.create('the best thing ever', 'flalalalallahiihihihi', 'Todd West')
 
 //get requests
 router.get('/', (req, res) => {
@@ -24,27 +26,8 @@ router.post('/', jsonParser, (req, res) => {
 			return res.status(400).send(`you are missing ${field} field`);
 		}
 	}	
-	BlogPosts.create(req.body.title, req.body.content, req.body.author);
-	res.status(200).send(`Title: "${req.body.title}" has been added`);
+	const item = BlogPosts.create(req.body.title, req.body.content, req.body.author);
+	res.status(200).json(item);
 });
-
-router.post('/place', jsonParser, (req, res) => {
-	let newPlace = new placeModel()
-	newPlace.name = req.body.name;
-	newPlace.lat = req.body.lat;
-	newPlace.lng = req.body.lng;
-	newPlace
-		.save()
-		.then(function() {
-			res.status(200).send("Place saved");
-		})
-		.catch(function(){
-			res.status(500).send('Something happened');
-		});
-});
-
-
-
-
 
 module.exports = router;
