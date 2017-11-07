@@ -33,7 +33,9 @@ function runServer() {
 function closeServer() {
   //return new Promise((resolve, reject) => {
     console.log('Closing server');
-     server.close()//err => {
+     server.close(function() {
+    process.exit(0);
+  	});//err => {
     //   if (err) {
     //      reject(err);
     //      console.log(err)
